@@ -24,7 +24,7 @@ app.get('/messages',(req,res)=>{
     })
     
 })
-var server = http.listen(3000,() =>{
+var server = http.listen(process.env.port,() =>{
     console.log("server is listening on port",server.address().port)
 })
 
