@@ -38,12 +38,12 @@
     }
 
     function getMessages() {
-        $.get('http://localhost:3000/messages', (data) => {
+        $.get('https://frozen-beyond-94370.herokuapp.com/', (data) => {
             data.forEach(addMessage);
         })
     }
 
     function postMessage(message) {
-        $.post('http://localhost:3000/messages', message)
+        $.post('https://frozen-beyond-94370.herokuapp.com/', message)
     }
 </script>
