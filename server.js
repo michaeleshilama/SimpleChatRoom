@@ -1,10 +1,10 @@
-var express = require('express') ;
-var bodyParser= require('body-parser')
+var express = require('express');
+var bodyParser= require('body-parser');
 var app = express();
-var http=require('http').Server(app)
-var io=require('socket.io')(http)
-var mongoose = require('mongoose')
-
+var http=require('http').Server(app);
+var io=require('socket.io')(http);
+var mongoose = require('mongoose');
+const port = process.env.PORT;
 
 app.use(express.static(__dirname))
 app.use(bodyParser.json())
@@ -24,7 +24,12 @@ app.get('/messages',(req,res)=>{
     })
     
 })
-var server = http.listen(process.env.port,() =>{
+
+if (port == null || port == "") {
+    port = 8000;
+}
+
+var server = http.listen(port,() =>{
     console.log("server is listening on port",server.address().port)
 })
 
