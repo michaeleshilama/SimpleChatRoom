@@ -38,12 +38,12 @@
     }
 
     function getMessages() {
-        $.get('https://frozen-beyond-94370.herokuapp.com/messages', (data) => {
+        $.get('https://mikes-simple-chat-room.herokuapp.com/messages', (data) => {
             data.forEach(addMessage);
         })
     }
 
     function postMessage(message) {
-        $.post('https://frozen-beyond-94370.herokuapp.com/messages', message)
+        $.post('https://mikes-simple-chat-room.herokuapp.com/messages', message)
     }
 </script>
